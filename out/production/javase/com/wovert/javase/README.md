@@ -1286,3 +1286,8 @@ ROUND_HALF_down > 0.5 向上加 1，否则直接舍去
 - 来自 JDK 注解
 - 自来第三方注解
 - 自定义注解
+
+## 常量池
+
+- -128 < Byte/Character/Short/Int/Long < 127
+
