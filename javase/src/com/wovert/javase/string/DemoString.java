@@ -1,22 +1,25 @@
 package com.wovert.javase.string;
 
-import java.io.UnsupportedEncodingException;
+import java.util.Arrays;
 
 public class DemoString {
-    public static void main(String[] args) throws UnsupportedEncodingException {
-        // string vs byte[]
-        String str = new String("Java Program 编程");
+    public static void main(String[] args) {
+        String str = "akdfjjkse92013323";
 
-        // string change to byte[]
-//        byte[] arrs = str.getBytes(); // 默认utf-8 编码
-        byte[] arrs = str.getBytes("GBK");
-        for (int i=0; i<arrs.length; i++) {
-            System.out.println(arrs[i] + " ");
-        }
-        System.out.println();
+        // charAt: 索引位置所在的字符
+        System.out.println(str.charAt(1));
 
-//        String str1 = new String(arrs);
-        String str1 = new String(arrs, "GBK");
-        System.out.println(str1);
+        // toCharArray
+        System.out.println(str.toCharArray());
+
+        char[] cs = {'a','b','c'};
+        System.out.println(new String(cs));
+
+        byte[] bytes = str.getBytes();
+        System.out.println(Arrays.toString(bytes));
+
+        // replaceAll
+        System.out.println(str.replaceAll("[0-9]", "*"));
+        System.out.println(str.replaceAll("\\d", "*"));
     }
 }

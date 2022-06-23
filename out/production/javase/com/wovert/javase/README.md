@@ -1291,3 +1291,7 @@ ROUND_HALF_down > 0.5 向上加 1，否则直接舍去
 
 - -128 < Byte/Character/Short/Int/Long < 127
 
+## StringBuilder vs StringBuffer
+
+- StringBuffer 线程安全
+- StringBuilder(单线程用途) 性能略高
