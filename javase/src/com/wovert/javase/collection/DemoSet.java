@@ -55,11 +55,27 @@ public class DemoSet {
             System.out.println("没有找到");
         }
 
-        for(Object obj: set2) {
-            Notice n = (Notice)obj;
-            if ("考勤通知".equals(n.getTitle())) {
-                set2.remove(n);
-            }
+        System.out.println("-----------");
+
+        Cat huahua = new Cat("花花", 12, "英国短脚猫");
+        Cat fanfan = new Cat("凡凡", 3, "中国田园猫");
+
+        Set setCat = new HashSet();
+        setCat.add(huahua);
+        setCat.add(fanfan);
+
+        // show
+        Iterator itCat = setCat.iterator();
+        while(itCat.hasNext()) {
+            System.out.println(itCat.next());
+        }
+
+        Cat huahua2 = new Cat("花花", 12, "英国短脚猫");
+        setCat.add(huahua2);
+        System.out.println("--------");
+        Iterator itCat2 = setCat.iterator();
+        while(itCat2.hasNext()) {
+            System.out.println(itCat2.next());
         }
     }
 }
