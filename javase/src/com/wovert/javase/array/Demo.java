@@ -2,9 +2,25 @@ package com.wovert.javase.array;
 
 import java.sql.Array;
 import java.util.Arrays;
+import java.util.Random;
 
 public class Demo {
     public static void main(String[] args) {
+        // 数组元素打乱
+        int[] arr = {12, 48, 23, 92, 83};
+        System.out.println(Arrays.toString(arr));
+
+        Random r = new Random();
+        for (int i=0; i<arr.length; i++) {
+            int index = r.nextInt(arr.length);
+            System.out.println("index=" + index);
+            int temp = arr[i];
+            arr[i] = arr[index];
+            arr[index] = temp;
+        }
+        System.out.println(Arrays.toString(arr));
+
+
         // Binary search
         int[] numbers = {1,3,5,10,29,39,60};
 
