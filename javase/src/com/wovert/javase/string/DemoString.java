@@ -8,7 +8,6 @@ public class DemoString {
 
         // charAt: 索引位置所在的字符
         System.out.println(str.charAt(1));
-
         // toCharArray
         System.out.println(str.toCharArray());
 
