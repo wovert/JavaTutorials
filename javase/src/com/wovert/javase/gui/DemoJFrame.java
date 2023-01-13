@@ -38,8 +38,9 @@ public class DemoJFrame {
         jLabel.setBounds(100, 50, 100, 20);
         jf.add(jLabel);
 
-        JLabel jLabel2 = new JLabel(new ImageIcon("javase\\images\\bitcoin.jpg"));
-        jLabel2.setBounds(0, 0, 353, 300);
+        JLabel jLabel2 = new JLabel(new ImageIcon("D:\\development\\JavaTutorials\\javase\\images\\bitcoin.png"));
+//        JLabel jLabel2 = new JLabel(new ImageIcon("javase\\images\\bitcoin.png"));
+        jLabel2.setBounds(20, 30, 353, 300);
         jf.add(jLabel2);
 
         jf.setLayout(null); // 取消窗体的默认布局
