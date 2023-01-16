@@ -1,6 +1,8 @@
 package com.wovert.javase.gui;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class ChatRoom {
     public static void main(String[] args) {
@@ -32,6 +34,23 @@ public class ChatRoom {
         JButton clearBtn = new JButton("清空聊天");
         clearBtn.setBounds(280, 230, 90, 20);
         jf.add(clearBtn);
+
+        sendBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String message = messageField.getText().trim();
+                messageField.setText("");
+
+                messageArea.append(message + "\n");
+            }
+        });
+
+        clearBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                messageArea.setText("");
+            }
+        });
 
         jf.setVisible(true);
 

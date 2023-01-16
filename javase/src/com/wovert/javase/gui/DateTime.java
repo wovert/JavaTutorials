@@ -1,6 +1,8 @@
 package com.wovert.javase.gui;
 
 import javax.swing.*;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class DateTime {
     public static void main(String[] args) {
@@ -22,7 +24,14 @@ public class DateTime {
         dateLabel.setBounds(50, 50, 100, 20);
         jf.add(dateLabel);
 
-        JLabel dateValueLabel = new JLabel("xxxx年xx月xx日");
+        Date date = new Date();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy年MM月dd日");
+        SimpleDateFormat sdf2 = new SimpleDateFormat("HH:mm");
+        String dateValue = sdf.format(date);
+        String timeValue = sdf2.format(date);
+
+
+        JLabel dateValueLabel = new JLabel(dateValue);
         dateValueLabel.setBounds(50, 80, 200, 20);
         jf.add(dateValueLabel);
 
@@ -30,7 +39,7 @@ public class DateTime {
         timeLabel.setBounds(50, 150, 100, 20);
         jf.add(timeLabel);
 
-        JLabel timeValueLabel = new JLabel("xx:xx");
+        JLabel timeValueLabel = new JLabel(timeValue);
         timeValueLabel.setBounds(50, 180, 200, 20);
         jf.add(timeValueLabel);
 

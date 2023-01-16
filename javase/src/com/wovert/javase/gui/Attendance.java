@@ -3,6 +3,9 @@ package com.wovert.javase.gui;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class Attendance {
     public static void main(String[] args) {
@@ -54,6 +57,19 @@ public class Attendance {
             @Override
             public void actionPerformed(ActionEvent e) {
                 System.out.println("点击了确定按钮~");
+                SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
+
+                String startString = startTimeField.getText();
+                String endString = endTimeField.getText();
+
+                try {
+                    Date startDate = sdf.parse(startString);
+                    Date endDate = sdf.parse(endString);
+
+                    JOptionPane.showMessageDialog(jf, startDate + "\n" + endDate);
+                } catch (ParseException ex) {
+                    throw new RuntimeException(ex);
+                }
             }
         });
 

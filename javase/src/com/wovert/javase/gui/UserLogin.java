@@ -1,6 +1,8 @@
 package com.wovert.javase.gui;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class UserLogin {
     public static void main(String[] args) {
@@ -8,6 +10,10 @@ public class UserLogin {
     }
 
     private static void showJFrame() {
+
+        String username = "yonghu";
+        String password = "123456";
+
         JFrame jf = new JFrame();
 
         jf.setTitle("用户登录");
@@ -39,6 +45,40 @@ public class UserLogin {
         loginBtn.setBounds(50, 200, 280, 20);
         jf.add(loginBtn);
 
+        loginBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // 获取用户输入的用户名和密码
+                String usernameText = userNameField.getText();
+                String passwordText = passwordField.getText();
+
+                if (usernameText.length() < 6 || usernameText.length() > 12) {
+                    String msg = "用户名的长度是6-12位，请重新输入";
+                    System.out.println(msg);
+                    JOptionPane.showMessageDialog(jf, msg);
+                    userNameField.setText("");
+                    return;
+                }
+                if (passwordText.length() < 6 || passwordText.length() > 12) {
+                    String msg = "密码的长度是6-12位，请重新输入";
+                    System.out.println(msg);
+                    JOptionPane.showMessageDialog(jf, msg);
+                    passwordField.setText("");
+                    return;
+                }
+                if (username.equals(usernameText) && password.equals(passwordText)) {
+                    String msg = "登录成功";
+                    System.out.println(msg);
+                    JOptionPane.showMessageDialog(jf, msg);
+                    userNameField.setText("");
+                    passwordField.setText("");
+                } else {
+                    String msg = "用户名或者密码有误";
+                    System.out.println(msg);
+                    JOptionPane.showMessageDialog(jf, msg);
+                }
+            }
+        });
         jf.setVisible(true);
 
     }
