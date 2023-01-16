@@ -6,11 +6,13 @@ import java.util.List;
 
 public class DemoArrayList {
     public static void main(String[] args) {
-        List list = new ArrayList();
+        List<String> list = new ArrayList<>();
         System.out.println(list.isEmpty());
+
         // add element 有序，可重复
         list.add("Java");
         System.out.println(list.isEmpty());
+
         list.add("Go");
         list.add("C");
         list.add("C++");
