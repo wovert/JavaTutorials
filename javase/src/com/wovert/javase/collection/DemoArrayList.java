@@ -2,6 +2,7 @@ package com.wovert.javase.collection;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 
 public class DemoArrayList {
@@ -17,6 +18,32 @@ public class DemoArrayList {
         list.add("C");
         list.add("C++");
         list.add("Swift");
+
+        // 获得迭代器对象
+        Iterator<String> it = list.listIterator();
+
+        System.out.println("for------------");
+        for(String ele: list) {
+            System.out.println(ele);
+        }
+        System.out.println("/for------------");
+
+        System.out.println("迭代器对象开始--------");
+        while(it.hasNext()) {
+            String ele = it.next();
+            if ("C".equals(ele)) {
+                it.remove();
+                System.out.println("删除元素：" + ele);
+            } else {
+                System.out.println(ele);
+            }
+
+        }
+        System.out.println("迭代器对象结束----------");
+
+        // 从迭代器中删除元素
+
+
 
         System.out.println(list.contains("Go"));
 

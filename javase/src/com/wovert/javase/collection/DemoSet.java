@@ -1,9 +1,6 @@
 package com.wovert.javase.collection;
 
-import java.util.Date;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Set;
+import java.util.*;
 
 public class DemoSet {
     public static void main(String[] args) {
@@ -30,10 +27,11 @@ public class DemoSet {
         }
 
         System.out.println("-------------");
-        Notice notice1 = new Notice(1, "欢迎光临网站1", "管理员", new Date());
-        Notice notice2 = new Notice(2, "请同学按时提交作业", "老师", new Date());
-        Notice notice3 = new Notice(3, "考勤通知", "老师", new Date());
-        Notice notice4 = new Notice(3, "考勤通知", "老师", new Date());
+        Notice notice1 = new Notice(1, "欢迎光临网站1", "Bob", new Date());
+        Notice notice2 = new Notice(2, "请同学按时提交作业", "Alice", new Date());
+//        Notice notice3 = new Notice(3, "考勤通知", "老师", new Date(System.currentTimeMillis() + 1000));
+        Notice notice3 = new Notice(3, "考勤通知", "White", new Date());
+        Notice notice4 = new Notice(3, "我的日程", "Jack", new Date());
 
         Set set2 = new HashSet();
         set2.add(notice1);
@@ -77,5 +75,40 @@ public class DemoSet {
         while(itCat2.hasNext()) {
             System.out.println(itCat2.next());
         }
+
+        // TreeSet
+        TreeSet<Integer> ts = new TreeSet<>();
+        ts.add(5);
+        ts.add(1);
+        ts.add(3);
+        ts.add(4);
+        ts.add(2);
+        System.out.println(ts); // [1, 2, 3, 4, 5]
+
+        TreeSet<Notice> ts2 = new TreeSet<>();
+        ts2.add(notice2);
+        ts2.add(notice1);
+        ts2.add(notice4);
+        ts2.add(notice3);
+        System.out.println(ts2);
+
+
+        TreeSet<Notice> ts3 = new TreeSet<>(new Comparator<Notice>() {
+            @Override
+            public int compare(Notice o1, Notice o2) {
+                // o1 现在要存入的元素
+                // 02 已经存入到集合中的元素
+                int result = o1.getId() - o2.getId();
+                result = result == 0 ? o1.getCreator().compareTo(o2.getCreator()) : result;
+                return result;
+            }
+        });
+        ts3.add(notice2);
+        ts3.add(notice1);
+        ts3.add(notice4);
+        ts3.add(notice3);
+        System.out.println(ts3);
+
+
     }
 }

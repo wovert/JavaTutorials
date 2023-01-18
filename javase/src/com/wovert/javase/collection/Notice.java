@@ -1,8 +1,10 @@
 package com.wovert.javase.collection;
 
+import java.text.SimpleDateFormat;
+import java.util.Comparator;
 import java.util.Date;
 
-public class Notice {
+public class Notice implements Comparable<Notice> {
     private int id;
     private String title;
     private String creator;
@@ -70,6 +72,22 @@ public class Notice {
 
     @Override
     public String toString() {
-        return this.getTitle() + ":" + this.getCreator();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy年MM月dd日 HH:mm:ss");
+        String date = sdf.format(this.getCreateTime());
+
+        return this.id +"=>" + this.getTitle() + ":" + this.getCreator() + date;
+    }
+
+    @Override
+    public int compareTo(Notice notice) {
+        // 根据对象的编号排序
+        // 返回值为负数，表示当前存入的元素是较小值，存左边
+        // 返回值为0，表示当前存入的元素跟集合中元素重复了，不存
+        // 返回0，后面的覆盖前面的
+        int result = this.id - notice.id;
+        if (0 == result) {
+            result = (int)(this.getCreateTime().getTime() - notice.getCreateTime().getTime());
+        }
+        return result;
     }
 }
