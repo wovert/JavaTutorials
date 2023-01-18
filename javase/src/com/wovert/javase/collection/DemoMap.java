@@ -60,5 +60,11 @@ public class DemoMap {
         for(Map.Entry e: entrySet) {
             System.out.println(e.getKey() + "=" + e.getValue());
         }
+
+        map.forEach(
+                (String k, String v) -> {
+                    System.out.println(k + "=>" + v);
+                }
+        );
     }
 }
