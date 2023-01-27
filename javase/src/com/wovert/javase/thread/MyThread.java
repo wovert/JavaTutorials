@@ -8,4 +8,8 @@ public class MyThread extends Thread{
             System.out.println(Thread.currentThread().getName() + "线程开启" + i);
         }
     }
+
+    public MyThread(String name) {
+        super(name);
+    }
 }
