@@ -3,9 +3,8 @@ package com.wovert.javase.network.udp;
 import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
-import java.net.SocketException;
 
-public class UdpServer {
+public class UdpBroadServer {
     public static void main(String[] args) throws IOException {
         // 找码头
         DatagramSocket ds = new DatagramSocket(10000);
