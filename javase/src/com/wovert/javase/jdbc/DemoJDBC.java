@@ -28,7 +28,7 @@ public class DemoJDBC {
 
         // 6. 处理结果
         System.out.println(count);
-
+ 
         // 7. 释放资源
         stmt.close();
         conn.close();
