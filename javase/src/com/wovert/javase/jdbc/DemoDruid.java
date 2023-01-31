@@ -9,6 +9,7 @@ import java.util.Properties;
 
 public class DemoDruid {
     public static void main(String[] args) throws Exception {
+        // https://github.com/alibaba/druid/
         // 1.导入jar包
         // 2.配置文件
 
