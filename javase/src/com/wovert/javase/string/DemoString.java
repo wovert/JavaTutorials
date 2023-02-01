@@ -5,6 +5,27 @@ import java.util.Scanner;
 
 public class DemoString {
     public static void main(String[] args) {
+        // 字符串直接赋值时，其值在编译期间能不能确定，能确定就会在常量池中创建并指向该对象，如果不能，将在运行期在堆中创建对象
+        String a = "a"; // 常量池
+        String a1 = a + 1; // a1运行时才能确定值， 运行时 a+1在堆内存创建空间
+        String b = "a1";
+        System.out.println(a == b); // false
+
+        final String c = "c"; // c常量
+        String c1 = c + 1; // c1编译时确定值
+        String b1 = "c1";
+        System.out.println(c1 == b1); // true
+
+        final String d = getD(); // 调用方法在运行期返回结果
+        String d1 = d + 1; // c1编译时确定值
+        String e1 = "d1";
+        System.out.println(d1 == e1); // false
+
+        String x = "x" + 1; // 编译时确定x的值
+        String y = "x1";
+        System.out.println(x == y); // true
+
+
         String str = "akdfJjkse92013323";
         String str2 = "akdfjjkse92013323";
         String str3 = "AKDFJJKSE92013323";
@@ -54,5 +75,9 @@ public class DemoString {
         // replaceAll
         System.out.println(str.replaceAll("[0-9]", "*"));
         System.out.println(str.replaceAll("\\d", "*"));
+    }
+
+    private static String getD() {
+        return "d";
     }
 }
