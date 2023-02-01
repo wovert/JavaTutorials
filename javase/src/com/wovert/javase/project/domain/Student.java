@@ -2,11 +2,16 @@ package com.wovert.javase.project.domain;
 
 public class Student {
     private String sid;
-    private String name;
+    public String name;
     private int age;
     private String birthday;
 
     public Student() {
+    }
+
+    private Student(String sid, String name) {
+        this.sid = sid;
+        this.name = name;
     }
 
     public Student(String sid, String name, int age, String birthday) {
@@ -46,5 +51,15 @@ public class Student {
 
     public void setBirthday(String birthday) {
         this.birthday = birthday;
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "sid='" + sid + '\'' +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                ", birthday='" + birthday + '\'' +
+                '}';
     }
 }

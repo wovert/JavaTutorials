@@ -7,6 +7,7 @@ public class Student {
     private String birthday;
     public Student() {
     }
+
     public String getId() {
         return id;
     }
@@ -46,4 +47,13 @@ public class Student {
         this.birthday = birthday;
     }
 
+    @Override
+    public String toString() {
+        return "Student{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", age='" + age + '\'' +
+                ", birthday='" + birthday + '\'' +
+                '}';
+    }
 }
