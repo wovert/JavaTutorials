@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/tomcat-custom" />
+    <file type="web" url="file://$PROJECT_DIR$/tomcat-demo" />
+  </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/maven-demo/pom.xml" />
+        <option value="$PROJECT_DIR$/mybatis-demo/pom.xml" />
+        <option value="$PROJECT_DIR$/tomcat-custom/pom.xml" />
       </list>
     </option>
   </component>
