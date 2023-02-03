@@ -13,6 +13,14 @@
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
     </properties>
+    <dependencies>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.1.0</version>
+            <scope>provided</scope> <!--编译/测试环境有效 因为生产环境tomcat有jar包-->
+        </dependency>
+    </dependencies>
 
     <build>
         <plugins>
@@ -23,7 +31,9 @@
                 <version>2.2</version>
                 <configuration>
                     <port>80</port>
-                    <path>/</path>
+<!--                    <path>/</path>-->
+<!--                    useBodyEncodingForURI-->
+<!--                    <useBodyEncodingForURI>true</useBodyEncodingForURI>-->
                 </configuration>
             </plugin>
         </plugins>
