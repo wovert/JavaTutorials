@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--namespace: 名称空间 Mapper接口全限定名-->
+<mapper namespace="com.wovert.mapper.BrandMapper">
+<!--    <select id="selectAll" resultType="brand">-->
+<!--        select * from tb_brand;-->
+<!--    </select>-->
+<!--    <select id="selectById" resultType="brand">-->
+<!--        select *-->
+<!--        from tb_brand-->
+<!--        where id = #{id};-->
+<!--    </select>-->
+
+    <resultMap id="brandResultMap" type="brand">
+        <result column="brand_name" property="brandName"></result>
+        <result column="company_name" property="companyName"></result>
+    </resultMap>
+</mapper>

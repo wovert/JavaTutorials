@@ -1,7 +1,10 @@
 package com.wovert.web;
 
+import org.apache.commons.io.IOUtils;
+
 import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
+import java.io.FileInputStream;
 import java.io.IOException;
 
 
@@ -47,6 +50,25 @@ public class ServletHelloWorld implements Servlet {
         System.out.println("Hello World Servlet!");
         Object msg = servletRequest.getAttribute("msg");
         System.out.println("msg=" + msg);
+
+        // 输出字节数据
+
+        // 1.读取文件
+        FileInputStream fis = new FileInputStream("D:\\development\\JavaTutorials\\img\\memory.png");
+
+        // 2.读取response字节输出流
+        ServletOutputStream os = servletResponse.getOutputStream();
+
+        // 3.完成copy
+//        byte[] buf = new byte[1024];
+//        int len = 0;
+//        while((len = fis.read(buf)) != -1) {
+//            os.write(buf, 0, len);
+//        }
+
+        IOUtils.copy(fis, os);
+        fis.close();
+
     }
 
     /**
