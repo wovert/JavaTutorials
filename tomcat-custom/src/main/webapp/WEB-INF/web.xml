@@ -14,4 +14,9 @@
         <servlet-name>servletxml</servlet-name>
         <url-pattern>/xmlfile</url-pattern>
     </servlet-mapping>
+
+<!--    分钟： 默认30分钟-->
+    <session-config>
+        <session-timeout>100</session-timeout>
+    </session-config>
 </web-app>

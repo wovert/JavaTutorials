@@ -12,7 +12,7 @@
     <title>所有品牌列表</title>
 </head>
 <body>
-<a href="/tomcat-custom/brand/add.html">新增</a>
+<a href="/tomcat-custom/brand/add.jsp">新增</a>
 <table>
     <tr>
         <th>编号</th>

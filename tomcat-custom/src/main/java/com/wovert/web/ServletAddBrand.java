@@ -1,6 +1,8 @@
 package com.wovert.web;
 
+import com.alibaba.fastjson.JSON;
 import com.wovert.pojo.Brand;
+import com.wovert.pojo.Person;
 import com.wovert.service.BrandService;
 
 import javax.servlet.ServletException;
@@ -26,6 +28,22 @@ public class ServletAddBrand extends HttpServlet {
         String ordered = request.getParameter("ordered");
         String description = request.getParameter("description");
         String status = request.getParameter("status");
+
+        // json to java
+        Person person = JSON.parseObject(description, Person.class);
+        System.out.println("Person=" + person);
+
+        // json to java
+        String jsonstr = JSON.toJSONString(person);
+        System.out.println(jsonstr);
+
+
+        /**
+         * 获取请求体数据
+         * BufferReader br = request.getReader();
+         * String params = br.readLine();
+         * Brand brand = JSON.parseObject(params, Brand.class);
+         */
 
         Brand brand = new Brand();
         brand.setBrandName(brandName);
