@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+<!--    Servelt 全类名-->
+    <servlet>
+        <servlet-name>servletxml</servlet-name>
+        <servlet-class>com.wovert.web.ServerletXml</servlet-class>
+    </servlet>
+    
+<!--    Serverlet访问路径-->
+    <servlet-mapping>
+        <servlet-name>servletxml</servlet-name>
+        <url-pattern>/xmlfile</url-pattern>
+    </servlet-mapping>
+
+<!--    分钟： 默认30分钟-->
+    <session-config>
+        <session-timeout>100</session-timeout>
+    </session-config>
+</web-app>
