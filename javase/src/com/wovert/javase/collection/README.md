@@ -2,8 +2,9 @@
 
 - Collection接口(类的对象)
   - List接口(序列) 有序，可重复
-    - ArrayList
-    - LinkedList
+    - ArrayList（线程不安全，效率高）
+    - LinkedList(双线链表)
+    - Vector(线程安全，效率低)
   - Queue接口(队列) 有序，可重复
     - LinkedList
   - Set接口(集) 无序，不可重复
