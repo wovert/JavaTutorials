@@ -1,5 +1,8 @@
 package com.wovert.javase.math;
 
+import java.util.Arrays;
+import java.util.Random;
+
 public class DemoMath {
     public static void main(String[] args) {
         System.out.println(Math.abs(-1.2)); // 1.2
@@ -13,5 +16,23 @@ public class DemoMath {
         for (int i=0; i<100; i++) {
             System.out.println(Math.random()); // [0.0, 1.0)  0.0包含，1.0不包含
         }
+
+        // 伪随机数
+        Random r = new Random();
+        System.out.println(r.nextInt(100));
+
+        int[] nums = {1,2,33,12,22};
+        Arrays.sort(nums);
+
+        int[] temp = new int[nums.length];
+        System.arraycopy(nums, 0, temp, 0, temp.length);
+
+        for (int i = 0; i < nums.length; i++) {
+            System.out.println(temp[i]);
+        }
+
+        // 二分查找算法 数组必须时有序的
+        int index = Arrays.binarySearch(nums, 12);
+        System.out.println("index=" + index); // 2
     }
 }

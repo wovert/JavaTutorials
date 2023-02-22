@@ -7,6 +7,9 @@ public class DemoAdpter {
 
         PowerB pb = new PowerBImpl();
 //        work(pa);
+
+
+        // 使用适配器
         Adapter adapter = new Adapter(pb);
         work(adapter);
     }

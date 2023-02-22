@@ -1,4 +1,4 @@
-package com.wovert.javase;
+package com.wovert.javase.arithmetic;
 
 public class SwapValue {
     public static void main(String[] args) {

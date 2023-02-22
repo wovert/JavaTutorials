@@ -52,7 +52,7 @@ public class DemoInner {
         Outer.Inner i = new Outer().new Inner();
         i.print();
 
-        // 创建静态内部类格式
+        // 创建静态内部类格式（优先使用静态内部类）
         Outer.staticInner si = new Outer.staticInner();
         si.print();
 
@@ -73,8 +73,10 @@ public class DemoInner {
 
         Outer.staticInner.method();
 
+        System.out.println("-------------内部类方法");
         DemoInner di = new DemoInner();
         di.method();
+        System.out.println("-------------内部类方法");
 
         IAImpl ia = new IAImpl();
         ia.run();
@@ -105,12 +107,18 @@ public class DemoInner {
     }
 
     public void method() {
+        final int method_name = 20;
         // 局部内部类
         class Inner {
             public void show() {
+//                int method_name = 30;
+                //  方法内部类对象不能使用该内部类所在方法的非 final 局部变量
+//                method_name = 30; // error
                 System.out.println("show...");
+                System.out.println(method_name);
             }
         }
+
         Inner i = new Inner();
         i.show();
     }

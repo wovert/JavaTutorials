@@ -1,10 +1,6 @@
 package com.wovert.javase.jdbc;
 
-import com.wovert.javase.jdbc.javabean.User;
-
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
 
 public class DemoPreparedStatement {
     public static void main(String[] args) throws ClassNotFoundException, SQLException {

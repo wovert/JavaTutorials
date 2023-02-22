@@ -1,5 +1,8 @@
 package com.wovert.javase.designPattern;
 
+/**
+ * 代理设计模式
+ */
 public class DemoProxy {
     public static void main(String[] args) {
         UserAction user = new UserAction();
