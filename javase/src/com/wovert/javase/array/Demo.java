@@ -6,6 +6,16 @@ import java.util.Random;
 
 public class Demo {
     public static void main(String[] args) {
+        // 动态初始化: 指定数组长度，默认初始化为数据类型默认值
+        byte[] bArr = new byte[3];
+
+        System.out.println(bArr);
+        for (int i = 0; i < 3; i++) {
+            System.out.println("bArr[" + i + "]=" + bArr[i]);
+        }
+        System.out.println("--------------");
+        
+
         // 数组元素打乱
         int[] arr = {12, 48, 23, 92, 83};
         System.out.println(Arrays.toString(arr));

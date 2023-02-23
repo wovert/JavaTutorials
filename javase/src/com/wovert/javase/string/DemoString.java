@@ -68,6 +68,12 @@ public class DemoString {
         char[] cs = {'a','b','c'};
         System.out.println(new String(cs));
 
+        // String substring(int beginIndex [, endIndex]);
+        String phoneNumber = "13012345678";
+        String phone = phoneNumber.substring(0, 3) + "****" + phoneNumber.substring(7);
+        System.out.println(phone);
+
+
         // Arrays.toString()
         byte[] bytes = str.getBytes();
         System.out.println(Arrays.toString(bytes));
@@ -75,6 +81,13 @@ public class DemoString {
         // replaceAll
         System.out.println(str.replaceAll("[0-9]", "*"));
         System.out.println(str.replaceAll("\\d", "*"));
+
+        // split
+        String name = "张三，李四，王五";
+        String[] names = name.split("，");
+        for (int i = 0; i < names.length; i++) {
+            System.out.println(names[i]);
+        }
     }
 
     private static String getD() {

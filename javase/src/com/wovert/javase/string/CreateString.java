@@ -11,5 +11,6 @@ public class CreateString {
         String name4 = new String(bytes);
         char[] chars = {'a','b','c'};
         String name5 = new String(chars);
+        System.out.println("name5=" + name5);
     }
 }
