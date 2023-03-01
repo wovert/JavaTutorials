@@ -24,9 +24,9 @@ public class DemoMath {
         int[] nums = {1,2,33,12,22};
         Arrays.sort(nums);
 
-        int[] temp = new int[nums.length];
+        int[] temp = new int[nums.length];        // arraycopy(数据源, 起始索引, 目的数组, 起始索引, 拷贝个数)
         System.arraycopy(nums, 0, temp, 0, temp.length);
-
+//lay
         for (int i = 0; i < nums.length; i++) {
             System.out.println(temp[i]);
         }

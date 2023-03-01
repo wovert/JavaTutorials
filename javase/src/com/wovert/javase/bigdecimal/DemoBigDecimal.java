@@ -5,6 +5,8 @@ import java.math.BigDecimal;
 public class DemoBigDecimal {
     public static void main(String[] args) {
 //        BigDecimal bd1 = new BigDecimal(10.8);
+
+        // 必须使用字符串形式计算
         BigDecimal bd1 = new BigDecimal("10.0");
         BigDecimal bd2 = new BigDecimal("3.0");
 
@@ -17,6 +19,8 @@ public class DemoBigDecimal {
 
         System.out.println(10.8 - 0.3);
         System.out.println(bd1.subtract(bd2));
+
+        System.out.println(bd1.multiply(bd2));
 
         BigDecimal divide1 = bd1.divide(bd2, 2, BigDecimal.ROUND_HALF_DOWN); // 四舍五入
         BigDecimal divide2 = bd1.divide(bd2, 2, BigDecimal.ROUND_UP); // 进一法
