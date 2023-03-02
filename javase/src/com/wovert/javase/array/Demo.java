@@ -34,6 +34,8 @@ public class Demo {
         // Binary search
         int[] numbers = {1,3,5,10,29,39,60};
 
+        int myIndex = myBinarySearch(numbers, 39);
+        System.out.println("myIndex=" + myIndex);
         int index = Arrays.binarySearch(numbers, 39);
         System.out.println("index=" + index); // 5
 
@@ -59,6 +61,23 @@ public class Demo {
          * 数组的复制
          * 效率由高到低排序是：System.arraycopy < Arrays.copyof < for
          */
+
+    }
+
+    private static int myBinarySearch(int[] arr, int i) {
+        int min = 0;
+        int max = arr.length - 1;
+        while(min <= max) {
+            int mid = (min + max) >> 1;
+            if (arr[mid] > i) {
+                max = mid - 1;
+            } else if(arr[mid] < i) {
+                min = mid + 1;
+            } else {
+                return mid;
+            }
+        }
+        return -1;
 
     }
 }
